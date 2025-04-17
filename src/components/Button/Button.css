@@ -1,0 +1,22 @@
+.button {
+    border: 1px solid;
+    border-image-source: linear-gradient(180deg, #dcaaff 0%, #bf69fe 100%);
+    border-image-slice: 10;
+    width: 217px;
+    padding: 10px 0 12px 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--foreground);
+    text-transform: uppercase;
+    background: #1D0C2B10;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+        background: #3A1D51;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

@@ -1,0 +1,214 @@
+.app__container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url("/bg.png") no-repeat center center/cover;
+    cursor: none;
+    & > *:not(.app__cursor):not(.app__overlay):not(.app__stripes) {
+        transition: all 200ms ease-in-out;
+        opacity: 0;
+    }
+}
+
+.app__border{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border: 20px solid var(--background);
+    box-shadow: inset 0 0 0 1px #DCAAFF60;
+    z-index: 5;
+}
+
+.app__container-loaded {
+    & > *:not(.app__cursor):not(.app__overlay):not(.app__stripes) {
+        opacity: 1;
+    }
+}
+
+.app__logo {
+    position: absolute;
+    top: 46px;
+    left: 40px;
+    z-index: 10;
+}
+
+.app__logo_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;  
+}
+.app__logo_bg {
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      z-index: 9;
+      scale: 1.02;  
+}
+
+.app__links {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 10;
+}
+
+.app__links_extension {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 300;
+    width: 173px;
+    & span {
+        background: linear-gradient(180deg, #dcaaff 0%, #bf69fe 100%);
+        background-clip: text;
+        background-size: cover;
+        text-transform: uppercase;
+        color: transparent;
+    }
+    & img{
+        width: 11px;
+    }
+}
+
+.app__main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+}
+
+.app__main__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app__main__actions_text {
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & img {
+        width: 9px;
+        height: fit-content;
+    }
+}
+
+.app__main__title {
+    position: relative;
+    font-family: "VisitorRus";
+    font-size: 150px;
+    line-height: 172px;
+    font-weight: 400;
+}
+
+.app__main__title_1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    background: linear-gradient(180deg, #b856ff 0%, #8a27d3 100%);
+    background-clip: text;
+    background-size: cover;
+    color: transparent;
+}
+
+.app__main__title_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    color: #c074f7;
+    opacity: 50%;
+    filter: blur(5px);
+}
+
+.app__main__title_3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    color: #c074f7;
+    opacity: 40%;
+    filter: blur(10px);
+}
+
+.app__main__title_3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    color: #c074f7;
+    opacity: 30%;
+    filter: blur(50px);
+}
+
+.app__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/overlay.png") no-repeat center center/cover;
+    pointer-events: none;
+    mask-image: radial-gradient(
+        circle 100px at var(--x, 50%) var(--y, 50%),
+        rgba(217, 217, 217, 0) 0%,
+        rgba(217, 217, 217, 1) 100%
+    );
+    z-index: 4;
+}
+
+.app__cursor {
+    position: fixed;
+    top: var(--y, 50%);
+    left: var(--x, 50%);
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid var(--accent-purple);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    pointer-events: none;
+}
+
+.app__cursor_inner {
+    width: 14px;
+    height: 14px;
+    background: transparent;
+    border: 2px solid var(--accent-purple);
+    border-radius: 50%;
+}
+
+.app__stripes {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/stripes.png") no-repeat center center/cover;
+    z-index: 6;
+}

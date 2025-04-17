@@ -1,0 +1,31 @@
+.custom-title__container{
+    position: relative;
+    background: linear-gradient(180deg, #DCAAFF 0%, #BF69FE 100%);
+    background-clip: text;
+    background-size: cover;
+    color: transparent;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.custom-title__container_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #DCAAFF 0%, #BF69FE 100%);
+    background-clip: text;
+    background-size: cover;
+    color: transparent;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: 300;
+    text-transform: uppercase;
+    filter: blur(4px);
+    opacity: 0%;
+    transition: all 150ms ease-in-out;
+    &:hover{
+        opacity: 100%;
+    }
+}
